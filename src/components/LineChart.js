@@ -1,3 +1,4 @@
+// eslint-disable-next-line <rule-name>
 import { Chart, LinearScale, CategoryScale, LineController, LineElement, PointElement, Title, Ticks, scales } from 'chart.js/auto'; // Importing necessary Chart.js components
 
 import React from 'react';

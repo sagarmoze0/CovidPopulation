@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import HistoricalData from './components/HistoricalData';
 function App() {

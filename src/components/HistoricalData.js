@@ -137,6 +137,7 @@ const HistoricalData = () => {
     const [selecteCountry, setSelectCountry] = useState('usa');
     const [historicalData, setHistoricalData] = useState(null);
     const [loading, setLoading] = useState(true);
+    /* eslint-disable no-unused-vars */
     const [error, setError] = useState(null);
    
 
