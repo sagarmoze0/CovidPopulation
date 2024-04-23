@@ -73,22 +73,17 @@ const HistoricalData = () => {
     }
     
     // JSX for rendering the component
-    return (
+      return (
         <div className="container mx-auto py-8">
             {/* Title */}
-            <h1 className="text-3xl flex items-center justify-center font-bold mb-4">COVID-19 and Population Dashboard</h1>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-center">COVID-19 and Population Dashboard</h1>
 
-            <div className="flex flex-col items-center">
-                {/* Display selected country */}
-                <h1>Country: {selecteCountry.toUpperCase()}</h1>
-        
-                {/* Loading indicator */}
+            {/* Country selection */}
+            <div className="flex flex-col items-center mb-8">
+                <h2 className="mb-2">Country: {selecteCountry.toUpperCase()}</h2>
                 {loading && <p>Loading...</p>}
-        
-                {/* Country selection dropdown */}
                 <select className="border rounded-lg font-semibold px-4 py-2 mb-4" value={selecteCountry} onChange={handleCountry}>
                     <option value="">Select country</option>
-                    {/* Loop through countries and create options */}
                     {country && country.map((countries) => (
                         <option key={countries.cca2} value={countries.cca2.toLowerCase()}>
                             {countries.name.common}
@@ -96,39 +91,23 @@ const HistoricalData = () => {
                     ))}
                 </select>
             </div>
-    
+
             {/* Data rectangles section */}
-            <div className="grid grid-cols-3 gap-4 mb-10">
-                <div className="flex items-center">
-                    <DataRectangle label="Total Cases" count={totalCases} color="#9CA8FF" />
-                </div>
-                <div className="flex items-centerflex items-center">
-                    <DataRectangle label="Recoveries" count={totalRecoveries} color="#47D928" />
-                </div>
-                <div className="flex items-center">
-                    <DataRectangle label="Deaths" count={totalDeaths} color="#FF4D57" />
-                </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
+                <DataRectangle label="Total Cases" count={totalCases} color="#9CA8FF" />
+                <DataRectangle label="Recoveries" count={totalRecoveries} color="#47D928" />
+                <DataRectangle label="Deaths" count={totalDeaths} color="#FF4D57" />
             </div>
-    
+
             {/* Charts section */}
-            <div className="flex justify-between space-x-10">
-              
-                <div className="w-2/4">
-                <h2 className="mb-5">Line Chart</h2>
-                    {historicalData ? (
-                        <LineChart data={historicalData} />
-                    ) : (
-                        <p>Loading historical data...</p>
-                    )}
+            <div className="flex flex-col md:flex-row md:justify-between md:space-x-10">
+                <div className="w-full md:w-2/4">
+                    <h2 className="mb-5 text-center">Line Chart</h2>
+                    {historicalData ? <LineChart data={historicalData} /> : <p>Loading historical data...</p>}
                 </div>
-               
-                <div className="w-1/6">
-                <h2 className="mb-5">Pie Chart</h2>
-                    {historicalData ? (
-                        <PieChart data={historicalData} />
-                    ) : (
-                        <p>Loading historical data...</p>
-                    )}
+                <div className="w-full md:w-1/5">
+                    <h2 className="mb-5 text-center">Pie Chart</h2>
+                    {historicalData ? <PieChart data={historicalData} /> : <p>Loading historical data...</p>}
                 </div>
             </div>
         </div>
