@@ -80,7 +80,7 @@ const HistoricalData = () => {
 
             {/* Country selection */}
             <div className="flex flex-col items-center mb-8">
-                <h2 className="mb-2">Country: {selecteCountry.toUpperCase()}</h2>
+                <h2 className="mb-2">ISO code of the country: {selecteCountry.toUpperCase()}</h2>
                 {loading && <p>Loading...</p>}
                 <select className="border rounded-lg font-semibold px-4 py-2 mb-4" value={selecteCountry} onChange={handleCountry}>
                     <option value="">Select country</option>
