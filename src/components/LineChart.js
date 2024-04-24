@@ -1,4 +1,6 @@
+// eslint-disable-next-line no-unused-vars
 import { Chart, LinearScale, CategoryScale, LineController, LineElement, PointElement, Title, Ticks, scales } from 'chart.js/auto';
+
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 

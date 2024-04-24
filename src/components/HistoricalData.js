@@ -11,6 +11,7 @@ const HistoricalData = () => {
     const [selecteCountry, setSelectCountry] = useState('usa');
     const [historicalData, setHistoricalData] = useState(null);
     const [loading, setLoading] = useState(true);
+    // eslint-disable-next-line no-unused-vars
     const [error, setError] = useState(null);
     const [startDate, setStartDate] = useState(new Date('2020-01-01'));
     const [endDate, setEndDate] = useState(new Date('2023/12/31'));
