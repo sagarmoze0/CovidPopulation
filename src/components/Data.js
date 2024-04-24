@@ -1,22 +1,20 @@
 import React from "react";
 
 const DataRectangle = ({ label, count, color }) => {
-    // Function to format the count based on its value
+    // Function to format count number
     const formatCount = (count) => {
-        // Check if count is greater than or equal to 1000000 (1 million)
+        // If count is greater than or equal to 1 million, display it in millions with one decimal place
         if (count >= 1000000) {
-            // If count is greater than or equal to 1 million, format it in millions with one decimal place
             return `${(count / 1000000).toFixed(1)}M`;
         } else {
-            // If count is less than 1 million, return it as is
+            // Otherwise, display the count as it is
             return count;
         }
     };
 
-    // Log the count to the console for debugging
-    console.log(count);
+    // Output the formatted count to the console for debugging
+    console.log('count', count);
 
-    // Render the data rectangle with label, count, and background color
     return (
         <div className="rounded-lg flex justify-between shadow-md" style={{ backgroundColor: color }}>
             {/* Display the label */}

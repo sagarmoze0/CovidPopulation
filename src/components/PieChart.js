@@ -1,30 +1,41 @@
 import React from 'react';
-import { Pie } from 'react-chartjs-2'; // Importing Pie component from react-chartjs-2 library
+import { Pie } from 'react-chartjs-2';
 
-const PieChart = ({ data }) => {
-  // Check if data is available
+const PieChart = ({ data, startDate, endDate }) => {
   if (!data || !data.timeline) {
     return <p>No historical data available</p>;
   }
 
-  // Destructure data.timeline object
   const { cases, deaths, recovered } = data.timeline;
-  
-  // Calculate total cases, deaths, and recovered
-  const totalCases = Object.values(cases).reduce((acc, curr) => acc + curr, 0);
-  const totalDeaths = Object.values(deaths).reduce((acc, curr) => acc + curr, 0);
-  const totalRecovered = Object.values(recovered).reduce((acc, curr) => acc + curr, 0);
 
-  // Define chart data
+  // Filter data based on selected date range
+  const filteredCases = Object.entries(cases).filter(([date]) => {
+    const currentDate = new Date(date);
+    return currentDate >= startDate && currentDate <= endDate;
+  });
+
+  const totalCases = filteredCases.reduce((acc, [_, value]) => acc + value, 0);
+
+  // Filter recovered and deaths data similarly
+
+  const totalDeaths = Object.entries(deaths).filter(([date]) => {
+    const currentDate = new Date(date);
+    return currentDate >= startDate && currentDate <= endDate;
+  }).reduce((acc, [_, value]) => acc + value, 0);
+
+  const totalRecovered = Object.entries(recovered).filter(([date]) => {
+    const currentDate = new Date(date);
+    return currentDate >= startDate && currentDate <= endDate;
+  }).reduce((acc, [_, value]) => acc + value, 0);
+
   const chartData = {
-    labels: ['Cases'], // Label for the pie chart
+    labels: ['Cases', 'Recovered', 'Deaths'],
     datasets: [{
-      data: [totalCases, totalRecovered, totalDeaths], // Data values for cases, recovered, and deaths
-      backgroundColor: ['#E6E69E', '#47D928', '#FF4D57'], // Background colors for each section
+      data: [totalCases, totalRecovered, totalDeaths],
+      backgroundColor: ['#E6E69E', '#47D928', '#FF4D57'],
     }]
   };
 
-  // Render the Pie component from react-chartjs-2 with chartData
   return <Pie data={chartData} />;
 };
 
