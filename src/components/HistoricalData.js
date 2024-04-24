@@ -131,13 +131,13 @@ const HistoricalData = () => {
     return (
         <div className="container mx-auto py-8">
             {/* Page Title */}
-            <h1 className="text-3xl font-bold mb-4">COVID-19 and Population Dashboard</h1>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">COVID-19 and Population Dashboard</h1>
 
             {/* Country Selector and Date Selector */}
-            <div className="flex flex-col sm:flex-row justify-between space-y-4 sm:space-y-0 sm:space-x-4">
+            <div className="flex flex-col items-center mb-8">
                 {/* Country Selector */}
                 <div className="w-full sm:w-1/2">
-                    <h2 className="font-semibold">ISO Code Of Country: {selecteCountry.toUpperCase()}</h2>
+                    <h2 className="font-semibold mb-2">ISO Code Of Country: {selecteCountry.toUpperCase()}</h2>
                     {loading && <p>Loading...</p>}
                     <select className="font-semibold border rounded-lg px-4 py-2 mb-4 w-full" value={selecteCountry} onChange={handleCountry}>
                         <option>United States</option>
@@ -160,7 +160,7 @@ const HistoricalData = () => {
             </div>
 
             {/* Data Section */}
-            <div className="flex items-center grid grid-cols-3 gap-4 mb-10 mt-10">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
                 {/* Total Cases */}
                 <div className="flex items-center">
                     {historicalData ? (
@@ -188,9 +188,9 @@ const HistoricalData = () => {
             </div>
 
             {/* Charts Section */}
-            <div className="flex justify-between space-x-10">
+            <div className="flex flex-col md:flex-row md:justify-between md:space-x-10">
                 {/* Line Chart */}
-                <div className="w-2/4">
+                <div className="w-full md:w-2/4">
                     <p className="text-center mb-2">Line Chart</p>
                     {historicalData ? (
                         <LineChart data={historicalData} startDate={startDate} endDate={endDate} />
@@ -199,7 +199,7 @@ const HistoricalData = () => {
                     )}
                 </div>
                 {/* Pie Chart */}
-                <div className="w-1/5">
+                <div className="w-full md:w-1/5">
                     <p className="text-center mb-2">Pie Chart</p>
                     {historicalData ? (
                         <PieChart data={historicalData} startDate={startDate} endDate={endDate} />

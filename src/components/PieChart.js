@@ -29,7 +29,7 @@ const PieChart = ({ data, startDate, endDate }) => {
   }).reduce((acc, [_, value]) => acc + value, 0);
 
   const chartData = {
-    labels: ['Cases', 'Recovered', 'Deaths'],
+    labels: ['Cases'],
     datasets: [{
       data: [totalCases, totalRecovered, totalDeaths],
       backgroundColor: ['#E6E69E', '#47D928', '#FF4D57'],
