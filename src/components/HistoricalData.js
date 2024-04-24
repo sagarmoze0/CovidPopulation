@@ -136,7 +136,7 @@ const HistoricalData = () => {
             <div className="flex flex-col sm:flex-row justify-between space-y-4 sm:space-y-0 sm:space-x-4">
                 {/* Country Selector */}
                 <div className="w-full sm:w-1/2">
-                    <h2 className="font-semibold">Country: {selecteCountry.toUpperCase()}</h2>
+                    <h2 className="font-semibold">ISO Code Of Country: {selecteCountry.toUpperCase()}</h2>
                     {loading && <p>Loading...</p>}
                     <select className="font-semibold border rounded-lg px-4 py-2 mb-4 w-full" value={selecteCountry} onChange={handleCountry}>
                         <option>United States</option>
