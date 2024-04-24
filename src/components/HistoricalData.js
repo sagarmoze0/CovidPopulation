@@ -160,7 +160,7 @@ const HistoricalData = () => {
             </div>
 
             {/* Data Section */}
-            <div className="grid grid-cols-3 gap-4 mb-10 mt-10">
+            <div className="flex items-center grid grid-cols-3 gap-4 mb-10 mt-10">
                 {/* Total Cases */}
                 <div className="flex items-center">
                     {historicalData ? (
