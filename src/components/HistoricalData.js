@@ -129,7 +129,7 @@ const HistoricalData = () => {
 
     // Render
     return (
-        <div className="container mx-auto py-8 px-8">
+        <div className="container mx-auto py-8 px-10">
             {/* Page Title */}
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">COVID-19 and Population Dashboard</h1>
 
