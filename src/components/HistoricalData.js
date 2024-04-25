@@ -129,7 +129,7 @@ const HistoricalData = () => {
 
     // Render
     return (
-        <div className="container mx-auto py-8">
+        <div className="container mx-auto py-8 px-8">
             {/* Page Title */}
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">COVID-19 and Population Dashboard</h1>
 
@@ -162,7 +162,7 @@ const HistoricalData = () => {
             {/* Data Section */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
                 {/* Total Cases */}
-                <div className="flex items-center">
+                <div className="flex items-center ml-6">
                     {historicalData ? (
                         <DataRectangle label="Total Cases" count={calculateTotalCases()} color="#9CA8FF" />
                     ) : (
@@ -170,7 +170,7 @@ const HistoricalData = () => {
                     )}
                 </div>
                 {/* Recoveries */}
-                <div className="flex items-center">
+                <div className="flex items-center ml-6">
                     {historicalData ? (
                         <DataRectangle label="Recoveries" count={calculateTotalRecoveries()} color="#47D928" />
                     ) : (
@@ -178,7 +178,7 @@ const HistoricalData = () => {
                     )}
                 </div>
                 {/* Deaths */}
-                <div className="flex items-center">
+                <div className="flex items-center ml-6">
                     {historicalData ? (
                         <DataRectangle label="Deaths" count={calculateTotalDeaths()} color="#FF4D57" />
                     ) : (
@@ -199,7 +199,7 @@ const HistoricalData = () => {
                     )}
                 </div>
                 {/* Pie Chart */}
-                <div className="w-full md:w-1/5">
+                <div className="w-full md:w-1/6">
                     <p className="text-center mb-2">Pie Chart</p>
                     {historicalData ? (
                         <PieChart data={historicalData} startDate={startDate} endDate={endDate} />
