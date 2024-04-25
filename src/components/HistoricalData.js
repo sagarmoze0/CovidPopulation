@@ -188,7 +188,7 @@ const HistoricalData = () => {
             </div>
 
             {/* Charts Section */}
-            <div className="flex flex-col md:flex-row md:justify-between md:space-x-10">
+            <div className="flex flex-col md:flex-row md:justify-between md:space-x-10 sm:justofy-center">
                 {/* Line Chart */}
                 <div className="w-full md:w-2/4">
                     <p className="text-center mb-2">Line Chart</p>
@@ -199,7 +199,7 @@ const HistoricalData = () => {
                         )}
                 </div>
                 {/* Pie Chart */}
-                <div className="sm:justofy-center w-1/2 md:w-1/6">
+                <div className=" w-1/2 md:w-1/6">
                     <p className="text-center mb-2">Pie Chart</p>
                     {historicalData ? (
                         <PieChart data={historicalData} startDate={startDate} endDate={endDate} />
