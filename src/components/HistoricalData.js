@@ -199,7 +199,7 @@ const HistoricalData = () => {
                     )}
                 </div>
                 {/* Pie Chart */}
-                <div className="w-1/6 md:w-1/6">
+                <div className="w-1/3 md:w-1/6">
                     <p className="text-center mb-2">Pie Chart</p>
                     {historicalData ? (
                         <PieChart data={historicalData} startDate={startDate} endDate={endDate} />
