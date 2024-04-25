@@ -61,9 +61,26 @@ const LineChart = ({ data, startDate, endDate }) => {
             },
         ],
     };
+    const options={
+        scales:
+        {
+            x:{
+                title:{
+                    display: true,
+                    text:'years'
+                }
+            },
+            y:{
+                title:{
+                    display: true,
+                    text:'No of cases, recoveries & deaths'
+                }
+            }
+        }
+    }
 
     // Render Line chart component
-    return <Line data={chartData} />;
+    return <Line data={chartData} options={options}/>;
 };
 
 export default LineChart;
