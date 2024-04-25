@@ -73,8 +73,8 @@ const LineChart = ({ data, startDate, endDate }) => {
             y:{
                 title:{
                     display: true,
-                    text:'No of cases, recoveries & deaths'
-                }
+                    text:'cases, recoveries, deaths',
+                    padding: { top: 20, bottom: 10 }                }
             }
         }
     }
