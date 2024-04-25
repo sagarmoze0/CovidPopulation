@@ -192,16 +192,14 @@ const HistoricalData = () => {
                 {/* Line Chart */}
                 <div className="w-full md:w-2/4">
                     <p className="text-center mb-2">Line Chart</p>
-                    <div className="h-[400px] sm:h-[300px]">
                         {historicalData ? (
                             <LineChart data={historicalData} startDate={startDate} endDate={endDate} />
                         ) : (
                             <p>Loading historical data...</p>
                         )}
-                    </div>
                 </div>
                 {/* Pie Chart */}
-                <div className="justify-centre w-auto md:w-1/6">
+                <div className="justify-centre w-1/2 md:w-1/6">
                     <p className="text-center mb-2">Pie Chart</p>
                     {historicalData ? (
                         <PieChart data={historicalData} startDate={startDate} endDate={endDate} />

@@ -70,12 +70,6 @@ const LineChart = ({ data, startDate, endDate }) => {
                     text:'years'
                 }
             },
-            y:{
-                title:{
-                    display: true,
-                    text:'cases, recoveries, deaths',
-                    padding: { top: 20, bottom: 10 }                }
-            }
         }
     }
 
